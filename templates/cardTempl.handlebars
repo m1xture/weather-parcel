@@ -1,0 +1,10 @@
+<ul class="forecast">
+  {{#each forecast}}
+    <li class="forecast__item">
+      <p class="forecast__text">{{date}}</p>
+      <p class="forecast__text">{{minMax}}</p>
+      <p class="forecast__text">Day: {{dayStatus}}</p>
+      <p class="forecast__text">Night: {{nightStatus}}</p>
+    </li>
+  {{/each}}
+</ul>

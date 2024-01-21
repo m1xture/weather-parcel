@@ -1,3 +1,5 @@
+import formData from "./data";
+
 const formEl = document.querySelector("[data-form]");
 const msgBlockEl = document.querySelector("[data-msg]");
 const msgTextEl = document.querySelector("[data-msg-text]");
@@ -28,8 +30,7 @@ formEl.addEventListener("submit", (e) => {
     msgBlockEl.classList.add("shown-msg");
     setTimeout(hideMsg, 4500);
   }
-  document
-    .querySelector(".message__close")
-    .addEventListener("click", hideMsg);
+  document.querySelector(".message__close").addEventListener("click", hideMsg);
+
   e.currentTarget.reset();
 });

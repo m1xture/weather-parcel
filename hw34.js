@@ -30,7 +30,8 @@ refs.cityInputEl.addEventListener("change", async (e) => {
     .then((res) => res.json())
     .then(([{ Key }]) => {
       cityCode = Key;
-    }).catch(err => {
+    })
+    .catch((err) => {
       console.log(err);
     });
   await console.log(cityCode);
@@ -50,12 +51,16 @@ refs.cityInputEl.addEventListener("change", async (e) => {
           ((day.Temperature.Minimum.Value - 32) * 5) / 9
         );
         const date = new Date(day.Date);
-        const dateStr = `${date.getDate()}.${date.getMonth() + 1}`;
+        const dateStr = `${date.getDate()}.${
+          date.getMonth() < 10
+            ? "0" + (date.getMonth() + 1)
+            : date.getMonth() + 1
+        }`;
         console.log(dateStr);
 
         console.log(maxTemp, minTemp);
         return {
-          minMax: `${maxTemp} - ${minTemp}`,
+          minMax: `from ${maxTemp}° to ${minTemp}°`,
           date: dateStr,
           dayStatus: day.Day.IconPhrase,
           nightStatus: day.Night.IconPhrase,

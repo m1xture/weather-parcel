@@ -26,6 +26,7 @@ formEl.addEventListener("submit", (e) => {
       email: e.currentTarget.email.value,
       message: e.currentTarget.message.value,
     };
+
     msgTextEl.textContent = "Success🎊";
     msgBlockEl.classList.add("shown-msg");
     setTimeout(hideMsg, 4500);

@@ -1,4 +1,4 @@
-import Handlebars from "./node_modules/handlebars";
+import Handlebars from "handlebars";
 import template from "./templates/cardTempl.handlebars";
 
 const refs = {

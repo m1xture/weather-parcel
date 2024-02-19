@@ -25,7 +25,7 @@ refs.cityInputEl.addEventListener("change", async (e) => {
   let cityCode = "";
 
   await fetch(
-    `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=g6fPtSnnerlSQxLNA6uM5pde9EuNy0cG&q=${cityValue}`
+    `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=g6fPtSnnerlSQxLNA6uM5pde9EuNy0cG&q=${cityValue}`
   )
     .then((res) => res.json())
     .then(([{ Key }]) => {
@@ -36,7 +36,7 @@ refs.cityInputEl.addEventListener("change", async (e) => {
     });
   await console.log(cityCode);
   await fetch(
-    `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=g6fPtSnnerlSQxLNA6uM5pde9EuNy0cG`
+    `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=g6fPtSnnerlSQxLNA6uM5pde9EuNy0cG`
   )
     .then((res) => res.json())
     .then(({ DailyForecasts }) => {

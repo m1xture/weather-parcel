@@ -599,13 +599,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
 refs.cityInputEl.addEventListener("change", async (e)=>{
     const cityValue = e.currentTarget.value;
     let cityCode = "";
-    await fetch(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=g6fPtSnnerlSQxLNA6uM5pde9EuNy0cG&q=${cityValue}`).then((res)=>res.json()).then(([{ Key }])=>{
+    await fetch(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=g6fPtSnnerlSQxLNA6uM5pde9EuNy0cG&q=${cityValue}`).then((res)=>res.json()).then(([{ Key }])=>{
         cityCode = Key;
     }).catch((err)=>{
         console.log(err);
     });
     await console.log(cityCode);
-    await fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=g6fPtSnnerlSQxLNA6uM5pde9EuNy0cG`).then((res)=>res.json()).then(({ DailyForecasts })=>{
+    await fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=g6fPtSnnerlSQxLNA6uM5pde9EuNy0cG`).then((res)=>res.json()).then(({ DailyForecasts })=>{
         refs.cityBackdropEl.classList.add("is-hidden");
         console.log(DailyForecasts);
         //   let i = 0;
